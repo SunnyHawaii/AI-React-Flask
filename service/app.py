@@ -26,4 +26,21 @@ model = app.model('Prediction params',
 				  							description="Petal Width",
     					  				 	help="Petal Width cannot be blank")})
 
-classifier = joblib.load('cl
+classifier = joblib.load('classifier.joblib')
+
+@name_space.route("/")
+class MainClass(Resource):
+
+	def options(self):
+		response = make_response()
+		response.headers.add("Access-Control-Allow-Origin", "*")
+		response.headers.add('Access-Control-Allow-Headers', "*")
+		response.headers.add('Access-Control-Allow-Methods', "*")
+		return response
+
+	@app.expect(model)
+	def post(self):
+		try:
+			formData = request.json
+			data = [val for val in formData.values()]
+			prediction = 
