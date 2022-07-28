@@ -16,4 +16,14 @@ model = app.model('Prediction params',
 				  {'sepalLength': fields.Float(required = True,
 				  							   description="Sepal Length",
     					  				 	   help="Sepal Length cannot be blank"),
-				  'sepalWidth': fields.Flo
+				  'sepalWidth': fields.Float(required = True,
+				  							   description="Sepal Width",
+    					  				 	   help="Sepal Width cannot be blank"),
+				  'petalLength': fields.Float(required = True,
+				  							description="Petal Length",
+    					  				 	help="Petal Length cannot be blank"),
+				  'petalWidth': fields.Float(required = True,
+				  							description="Petal Width",
+    					  				 	help="Petal Width cannot be blank")})
+
+classifier = joblib.load('cl
