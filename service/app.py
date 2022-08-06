@@ -43,4 +43,16 @@ class MainClass(Resource):
 		try:
 			formData = request.json
 			data = [val for val in formData.values()]
-			prediction = 
+			prediction = classifier.predict(np.array(data).reshape(1, -1))
+			types = { 0: "Iris Setosa", 1: "Iris Versicolour ", 2: "Iris Virginica"}
+			response = jsonify({
+				"statusCode": 200,
+				"status": "Prediction made",
+				"result": "The type of iris plant is: " + types[prediction[0]]
+				})
+			response.headers.add('Access-Control-Allow-Origin', '*')
+			return response
+		except Exception as error:
+			return jsonify({
+				"statusCode": 500,
+				"status"
