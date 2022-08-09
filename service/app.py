@@ -55,4 +55,6 @@ class MainClass(Resource):
 		except Exception as error:
 			return jsonify({
 				"statusCode": 500,
-				"status"
+				"status": "Could not make prediction",
+				"error": str(error)
+			})
