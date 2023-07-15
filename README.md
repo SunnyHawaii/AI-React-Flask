@@ -13,4 +13,18 @@ A detailed guide for using this repository can be found here: https://towardsdat
 # Setup Procedures
 Use Create-react-app to start with a basic React app. Load Bootstrap for responsive website creation across multiple screen sizes. Add a form with dropdowns and Predict and Reset Prediction buttons in the App.js file. The form's state is updated on pressing the Predict button and the data is sent to the Flask backend. The App.css file is used to apply stylings.
 
-The Flask app has a POST endpoint '/prediction' that accepts input values as json, converts it into an array, uses th
+The Flask app has a POST endpoint '/prediction' that accepts input values as json, converts it into an array, uses the classifier stored in the classifier.joblib to make a prediction, and returns the prediction result as json.
+
+Clone the repository and undertake the following steps in two different terminals:
+
+- In the first terminal, navigate to the ui folder using 'cd ui' and perform the following sequence:
+
+    ```bash
+      $ npm install
+    ```
+
+Install serve globally, build our application and finally run the UI using serve on port 3000.
+
+    ```bash
+      npm install -g serve
+      npm
