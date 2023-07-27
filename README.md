@@ -27,4 +27,16 @@ Install serve globally, build our application and finally run the UI using serve
 
     ```bash
       npm install -g serve
-      npm
+      npm run build
+      serve -s build -l 3000
+    ```
+
+The UI should now be accessible at localhost:3000. However, the Flask service needs to be initiated separately.
+
+- In the second terminal, navigate to the service folder using 'cd service' and perform the following sequence to create a virtual environment and run the Flask app:
+
+    ```bash
+      pipenv install -r requirements.txt
+      pipenv shell
+      flask run
+    ```
