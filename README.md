@@ -40,3 +40,7 @@ The UI should now be accessible at localhost:3000. However, the Flask service ne
       pipenv shell
       flask run
     ```
+
+This will initiate the Flask service on 127.0.0.1:5000. You can now access the backend via localhost.
+
+The app uses a DecisionTreeClassifier on the iris dataset which requires 4 features — Sepal Length, Sepal Width, Petal Length and Petal Width. The model is pickled to classifier.joblib using joblib.dump(). To use the trained model for prediction on new data, the line 'classifier = joblib.load(‘classifier.joblib’)' is added to app.py.
